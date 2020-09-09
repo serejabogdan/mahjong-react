@@ -2,22 +2,42 @@ import React from 'react';
 import './App.css';
 import {Card} from './card/Card';
 
-function generateId() {
-  return Math.floor(Math.random() * 100);
+function generateIds(amountCards) {
+  let numberCards = [];
+  for(let i = 0; i < amountCards; i++) {
+    numberCards.push(Math.floor(Math.random() * 100));
+  }
+  return numberCards;
+}
+
+let first = null;
+let second = null;
+let isSecond = false;
+function clicked(e) {
+  e.target.classList.add('opened');
+  if (!isSecond) {
+    first = e.target;
+    isSecond = !isSecond;
+  } else if (isSecond) {
+    second = e.target;
+    console.log(first === second);
+    isSecond = !isSecond;
+  }
 }
 
 function cards(amountCards) {
+  let numberCards = generateIds(amountCards);
   let cards = [];
 
-  for(let i = 0; i < amountCards; i++) {
-    cards.push(<Card back={generateId()} key={i}/>);
+  Object.assign(cards, numberCards);
+  cards.sort();
+  numberCards.push(...cards);
+
+  cards = [];
+
+  for(let i = 0; i < numberCards.length; i++) {
+    cards.push(<Card back={numberCards[i]} key={i} onclick={clicked} />);
   }
-
-  // for(let i = 0; i < amountCards; i++) {
-  //   cards.push(<Card back={generateId()} key={i}/>);
-  // }
-
-  cards.push(...cards);
 
   return cards;
 }

@@ -3,7 +3,7 @@ import './Card.css';
 
 export const Card = (props) => {
     return (
-        <div className="card">
+        <div className="card" onClick={props.onclick}>
             <div className="content">
                 <div className="front">
                     
