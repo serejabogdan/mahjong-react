@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/serejabogdan/mahjong-react.git/static/css/main.0a001345.chunk.css",
+    "main.js": "/serejabogdan/mahjong-react.git/static/js/main.898b27b2.chunk.js",
+    "main.js.map": "/serejabogdan/mahjong-react.git/static/js/main.898b27b2.chunk.js.map",
+    "runtime-main.js": "/serejabogdan/mahjong-react.git/static/js/runtime-main.7c0874b4.js",
+    "runtime-main.js.map": "/serejabogdan/mahjong-react.git/static/js/runtime-main.7c0874b4.js.map",
+    "static/js/2.e49953ef.chunk.js": "/serejabogdan/mahjong-react.git/static/js/2.e49953ef.chunk.js",
+    "static/js/2.e49953ef.chunk.js.map": "/serejabogdan/mahjong-react.git/static/js/2.e49953ef.chunk.js.map",
+    "index.html": "/serejabogdan/mahjong-react.git/index.html",
+    "precache-manifest.316a029c4ed96f35ee80bcde71ae8ffa.js": "/serejabogdan/mahjong-react.git/precache-manifest.316a029c4ed96f35ee80bcde71ae8ffa.js",
+    "service-worker.js": "/serejabogdan/mahjong-react.git/service-worker.js",
+    "static/css/main.0a001345.chunk.css.map": "/serejabogdan/mahjong-react.git/static/css/main.0a001345.chunk.css.map",
+    "static/js/2.e49953ef.chunk.js.LICENSE.txt": "/serejabogdan/mahjong-react.git/static/js/2.e49953ef.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7c0874b4.js",
+    "static/js/2.e49953ef.chunk.js",
+    "static/css/main.0a001345.chunk.css",
+    "static/js/main.898b27b2.chunk.js"
+  ]
+}
