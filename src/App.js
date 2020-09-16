@@ -31,7 +31,6 @@ function cardEquals(firstCard, secondCard) {
   if(!firstCard || !secondCard) {
       return;
   }
-  debugger
   if(firstCard.text === secondCard.text) {
       setTimeout(() => {
         firstCard.addClass('hide');

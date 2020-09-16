@@ -13,7 +13,7 @@ class Dom {
     }
 
     classContains(className) {
-        this.$selector.classList.contains(className);
+        return this.$selector.classList.contains(className);
     }
 
     get text() {
