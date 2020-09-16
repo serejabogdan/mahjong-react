@@ -1,7 +1,51 @@
 import React from 'react';
 import './App.css';
-import {Card} from './card/Card';
+import {Cards} from './cards/Cards';
+import {$} from './dom/Dom';
 
+// function to define two cards
+function cardClick() {
+  let firstCard = null;
+  let secondCard = null;
+  
+  return function(e) {
+      const target = $(e.target);
+      if(target.classContains('opened')) {
+          return;
+      }
+  
+      if(!firstCard) {
+          firstCard = target;
+      }
+      else if(!secondCard) {
+          secondCard = target;
+          cardEquals(firstCard, secondCard);
+          secondCard = firstCard = null;
+      }
+      target.addClass('opened');
+  }
+}
+
+// comparison of two cards
+function cardEquals(firstCard, secondCard) {
+  if(!firstCard || !secondCard) {
+      return;
+  }
+  debugger
+  if(firstCard.text === secondCard.text) {
+      setTimeout(() => {
+        firstCard.addClass('hide');
+        secondCard.addClass('hide');
+      }, 1000);
+  } else {
+      setTimeout(() => {
+        firstCard.removeClass('opened');
+        secondCard.removeClass('opened');
+      }, 1000);
+  }
+}
+
+// generation of numbers for cards
 function generateIds(amountCards) {
   let numberCards = [];
   for(let i = 0; i < amountCards; i++) {
@@ -10,42 +54,13 @@ function generateIds(amountCards) {
   return numberCards;
 }
 
-let first = null;
-let second = null;
-let isSecond = false;
-function clicked(e) {
-  e.target.classList.add('opened');
-  if (!isSecond) {
-    first = e.target;
-    isSecond = !isSecond;
-  } else if (isSecond) {
-    second = e.target;
-    console.log(first === second);
-    isSecond = !isSecond;
-  }
-}
-
-function cards(amountCards) {
-  let numberCards = generateIds(amountCards);
-  let cards = [];
-
-  Object.assign(cards, numberCards);
-  cards.sort();
-  numberCards.push(...cards);
-
-  cards = [];
-
-  for(let i = 0; i < numberCards.length; i++) {
-    cards.push(<Card back={numberCards[i]} key={i} onclick={clicked} />);
-  }
-
-  return cards;
-}
-
 function App() {
+  const ids = generateIds(15);
+  const onCardClick = cardClick();
   return (
     <div className="wrapper">
-      {cards(15)}
+      <Cards ids={ids} onCardClick={onCardClick} />
+      <Cards ids={ids} onCardClick={onCardClick} isSort={true} />
     </div>
   );
 }
