@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6f4157c346c824039df6aaf6e1764bc1",
+    "revision": "c5faeccabc7ae1f0082d9d6eb0506a41",
     "url": "/mahjong-react/index.html"
   },
   {
-    "revision": "03799d768017b8d4c007",
+    "revision": "76244829775c464df9a3",
     "url": "/mahjong-react/static/css/main.0a001345.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mahjong-react/static/js/2.e49953ef.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "03799d768017b8d4c007",
-    "url": "/mahjong-react/static/js/main.451a66cd.chunk.js"
+    "revision": "76244829775c464df9a3",
+    "url": "/mahjong-react/static/js/main.57f1b123.chunk.js"
   },
   {
     "revision": "d4740589649d4c5699f2",
