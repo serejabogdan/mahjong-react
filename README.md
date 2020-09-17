@@ -1,4 +1,4 @@
-#Mahjong game
+# Mahjong game
 
 This project is mahjong game.
 
