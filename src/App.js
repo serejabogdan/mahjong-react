@@ -2,56 +2,65 @@ import React from 'react';
 import './App.css';
 import { Cards } from './cards/Cards';
 import { $ } from './utils/dom/Dom';
-import { isCardFree, addClass, removeClass } from './utils/utils';
+import { addClassCards, removeClassCards, randomNumber } from './utils/utils';
 
-// function to define two cards
 function cardClick() {
-  let firstCard = null;
-  let secondCard = null;
-
+  let cards = [];
   return function (e) {
-    const target = $(e.target);
-    if (isCardFree(target)) {
-      return;
+    if(!areCardsEnough(cards)) {
+      let target = $(e.target);
+      cards.push(target);
+      target.addClass('opened');
+    } else {
+      cardsComparison(cards);
+      cards = [];
     }
-
-    if (!firstCard) {
-      firstCard = target;
-    }
-    else if (!secondCard) {
-      secondCard = target;
-      cardsComparison(firstCard, secondCard);
-      secondCard = firstCard = null;
-    }
-    target.addClass('opened');
   }
 }
 
+function areCardsEnough(cards) {
+  return cards.length < 2;
+}
+
 // comparison of two cards
-function cardsComparison(firstCard, secondCard) {
-  if (!firstCard || !secondCard) {
+function cardsComparison(cards) {
+  const [firstCard, secondCard] = cards;
+  const areCardsExists = !areCardsEnough(cards);
+  if (areCardsExists) {
     return;
   }
-  if (firstCard.text === secondCard.text) {
-    setTimeout(() => {
-      addClass(firstCard, secondCard, 'hide');
-    }, 1000);
+  const areCardsEqual = firstCard.text === secondCard.text;
+  if (areCardsEqual) {
+    cardsHide(cards);
   } else {
-    setTimeout(() => {
-      removeClass(firstCard, secondCard, 'opened');
-      addClass(firstCard, secondCard, 'wait');
-    }, 1000);
-    setTimeout(() => {
-      removeClass(firstCard, secondCard, 'wait');
-    }, 1600);
+    cardsClosing(cards);
   }
+}
+
+function cardsHide(cards) {
+  const HIDE_ANIMATION_TIME = 1000;
+  setTimeout(() => {
+    addClassCards(cards, 'hide');
+  }, HIDE_ANIMATION_TIME);
+}
+
+function cardsClosing(cards) {
+  const CLOSE_ANIMATION_TIME = 1000;
+  const ANIMATION_WAITING = 1600;
+  setTimeout(() => {
+    removeClassCards(cards, 'opened');
+    addClassCards(cards, 'wait');
+  }, CLOSE_ANIMATION_TIME);
+  setTimeout(() => {
+    removeClassCards(cards, 'wait');
+  }, ANIMATION_WAITING);
 }
 
 // generation of numbers for cards
 function generateIds(amountCards) {
   let numberCards = [];
   for (let i = 0; i < amountCards; i++) {
-    numberCards.push(Math.floor(Math.random() * 100));
+    numberCards.push(randomNumber());
   }
   return numberCards;
 }
