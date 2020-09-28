@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/mahjong-react/precache-manifest.c26f6e8fd94551d76e7ea09d6de8c07b.js"
+  "/mahjong-react/precache-manifest.e72391ae09cfdbe0a79f7d6dbb8b8298.js"
 );
 
 self.addEventListener('message', (event) => {

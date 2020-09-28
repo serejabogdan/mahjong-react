@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/mahjong-react/static/css/main.0a001345.chunk.css",
-    "main.js": "/mahjong-react/static/js/main.cd2a577c.chunk.js",
-    "main.js.map": "/mahjong-react/static/js/main.cd2a577c.chunk.js.map",
+    "main.js": "/mahjong-react/static/js/main.9dcb54c3.chunk.js",
+    "main.js.map": "/mahjong-react/static/js/main.9dcb54c3.chunk.js.map",
     "runtime-main.js": "/mahjong-react/static/js/runtime-main.34964052.js",
     "runtime-main.js.map": "/mahjong-react/static/js/runtime-main.34964052.js.map",
     "static/js/2.42680453.chunk.js": "/mahjong-react/static/js/2.42680453.chunk.js",
     "static/js/2.42680453.chunk.js.map": "/mahjong-react/static/js/2.42680453.chunk.js.map",
     "index.html": "/mahjong-react/index.html",
-    "precache-manifest.c26f6e8fd94551d76e7ea09d6de8c07b.js": "/mahjong-react/precache-manifest.c26f6e8fd94551d76e7ea09d6de8c07b.js",
+    "precache-manifest.e72391ae09cfdbe0a79f7d6dbb8b8298.js": "/mahjong-react/precache-manifest.e72391ae09cfdbe0a79f7d6dbb8b8298.js",
     "service-worker.js": "/mahjong-react/service-worker.js",
     "static/css/main.0a001345.chunk.css.map": "/mahjong-react/static/css/main.0a001345.chunk.css.map",
     "static/js/2.42680453.chunk.js.LICENSE.txt": "/mahjong-react/static/js/2.42680453.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.34964052.js",
     "static/js/2.42680453.chunk.js",
     "static/css/main.0a001345.chunk.css",
-    "static/js/main.cd2a577c.chunk.js"
+    "static/js/main.9dcb54c3.chunk.js"
   ]
 }
