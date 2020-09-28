@@ -7,30 +7,38 @@ import { addClassCards, removeClassCards, randomNumber } from './utils/utils';
 function cardClick() {
   let cards = [];
   return function (e) {
+    let target = $(e.target);
+    const isCardFree = target.classContains('opened') || target.classContains('wait');
+    if(isCardFree) {
+      return;
+    }
+
     if(!areCardsEnough(cards)) {
-      let target = $(e.target);
       cards.push(target);
       target.addClass('opened');
-    } else {
-      cardsComparison(cards);
+    }
+    if(areCardsEnough(cards)) {
+      cardsAnimation(cards);
       cards = [];
     }
   }
 }
 
 function areCardsEnough(cards) {
-  return cards.length < 2;
+  return cards.length >= 2;
 }
 
 // comparison of two cards
-function cardsComparison(cards) {
+function areCardsEqual(cards) {
   const [firstCard, secondCard] = cards;
-  const areCardsExists = !areCardsEnough(cards);
-  if (areCardsExists) {
+  if (!areCardsEnough(cards)) {
     return;
   }
-  const areCardsEqual = firstCard.text === secondCard.text;
-  if (areCardsEqual) {
+  return firstCard.text === secondCard.text;
+}
+
+function cardsAnimation(cards) {
+  if (areCardsEqual(cards)) {
     cardsHide(cards);
   } else {
     cardsClosing(cards);
